@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <script src="script.js" defer></script>
+        <title>Hangman!</title>
+    </head>
+    <body>
+
+        <!-- navbar -->
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+            <a class="navbar-brand titleOfGame" href="index.html">Hangman!</a>
+            <div class="container center">
+                <button onclick="reset()" class="btn btn-success play-button" id="play">Play</button>
+
+                <button class="btn btn-warning" onclick="toggleFirstHint()" id="firstHintId">Hint 1</button>
+                <button class="btn btn-warning" onclick="toggleSecondHint()" id="secondHintId">Hint 2</button>
+                <button class="btn btn-warning" onclick="toggleThirdHint()" id="thirdHintId">Hint 3</button>
+            </div>
+            <div class="float-right">
+                <h4>Time: <span id="gameScore"></span></h4>
+            </div>
+            </div>
+        </nav>
+        <!-- end of navbar -->
+
+        <!-- middle section with picture, hints, and wordbank -->
+        <div class="container-fluid">
+            <table class="container">
+                <tr>
+                    <td><img id="picture" src="./images/6.jpg"></td>
+                    <td id="displayFirstHint"><span id="answer"></span></td>
+                    <td><p class="wordBank">Wordbank</p><br><p id="guessedLetters"></p></td>
+                </tr>
+            </table>
+        </div>
+        <!-- end middle section -->
+
+        <!-- display hints -->
+        <div id="displaySecondHint">
+            <p>This word has <span id="vowelCount">0</span> vowel<span id="displayS"></span></p>
+        </div>
+
+        <div id="displayThirdHint">
+            <p>This word starts with the letter <span id="firstLetter"></span></p>
+        </div>
+        <!-- end display hints -->
+        
+        <!-- display feedback to user -->
+        <div>
+            <p id="displayContent"> </p>
+            <p id="lives"> </p>
+        </div>
+        <!-- end feedback -->
+
+        <!-- keyboard -->
+        <div class="mainTable table-responsive" id="buttons">
+            <table class="center">
+                <tr>
+                    <button onclick="handleClick('q')" id="q">Q</button>
+                    <button onclick="handleClick('w')" id="w">W</button>
+                    <button onclick="handleClick('e')" id="e">E</button>
+                    <button onclick="handleClick('r')" id="r">R</button>
+                    <button onclick="handleClick('t')" id="t">T</button>
+                    <button onclick="handleClick('y')" id="y">Y</button>
+                    <button onclick="handleClick('u')" id="u">U</button>
+                    <button onclick="handleClick('i')" id="i">I</button>
+                    <button onclick="handleClick('o')" id="o">O</button>
+                    <button onclick="handleClick('p')" id="p">P</button>
+                </tr>
+            </table>
+            <table class="center">
+                <tr>
+                    <button onclick="handleClick('a')" id="a">A</button>
+                    <button onclick="handleClick('s')" id="s">S</button>
+                    <button onclick="handleClick('d')" id="d">D</button>
+                    <button onclick="handleClick('f')" id="f">F</button>
+                    <button onclick="handleClick('g')" id="g">G</button>
+                    <button onclick="handleClick('h')" id="h">H</button>
+                    <button onclick="handleClick('j')" id="j">J</button>
+                    <button onclick="handleClick('k')" id="k">K</button>
+                    <button onclick="handleClick('l')" id="l">L</button>
+                </tr>
+            </table>
+            <table class="center">
+                <tr>
+                    <button onclick="handleClick('z')" id="z">Z</button>
+                    <button onclick="handleClick('x')" id="x">X</button>
+                    <button onclick="handleClick('c')" id="c">C</button>
+                    <button onclick="handleClick('v')" id="v">V</button>
+                    <button onclick="handleClick('b')" id="b">B</button>
+                    <button onclick="handleClick('n')" id="n">N</button>
+                    <button onclick="handleClick('m')" id="m">M</button>
+                </tr>
+            </table>
+        </div>
+        <!-- end keyboard -->
+        
+    </body>
+</html>
