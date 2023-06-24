@@ -43,6 +43,10 @@ var alphabet;
 
 var wordStatus = null;
 
+document.getElementById("firstHint").disabled = true;
+document.getElementById("secondHint").disabled = true;
+document.getElementById("thirdHint").disabled = true;
+
 var playGame = () => {
     lives = 6;
     lockFlag = true;
@@ -54,6 +58,10 @@ var playGame = () => {
 
     firstHintPressed = false;
     timer = 101;
+
+    document.getElementById("firstHint").disabled = false;
+    document.getElementById("secondHint").disabled = false;
+    document.getElementById("thirdHint").disabled = false;
 
     /* generate a random word from the word array */
     randomWord = wordsArr[Math.floor(Math.random() * wordsArr.length)];
@@ -111,6 +119,8 @@ var toggleFirstHint = () => {
         timer -= 40;
         firstHintLock = false;
     }
+
+    document.getElementById("firstHint").style.display = "none";
 }
 
 var toggleSecondHint = () => {
@@ -122,6 +132,8 @@ var toggleSecondHint = () => {
         timer -= 10;
         secondHintLock = false;
     }
+
+    document.getElementById("secondHint").style.display = "none";
 }
 
 var toggleThirdHint = () => {
@@ -133,6 +145,8 @@ var toggleThirdHint = () => {
         timer -= 25;
         thirdHintLock = false;
     }
+
+    document.getElementById("thirdHint").style.display = "none";
 }
 
 var handleClick = (letter) => {
@@ -194,8 +208,8 @@ var handleClick = (letter) => {
             clearInterval(countdown);
         }
         
-        /* every button is disabled once clicked */
-        document.getElementById(document.getElementById(letter).id).setAttribute('disabled', true)
+        /* every button is deleted once clicked */
+        document.getElementById(letter).style.display = "none";
     }
 }
 
@@ -231,6 +245,10 @@ var reset = () => {
     guess = [];
     guessedLetterArr = [];
     allGuessesArr = [];
+
+    document.getElementById("firstHint").style.display = "inline-block";
+    document.getElementById("secondHint").style.display = "inline-block";
+    document.getElementById("thirdHint").style.display = "inline-block";
 
     document.getElementById("displayContent").innerHTML = "";
     document.getElementById("lives").innerHTML = "";

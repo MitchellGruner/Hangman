@@ -36,6 +36,8 @@ body {
 .mainTable {
     margin: 2em;
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #answer {
@@ -62,4 +64,154 @@ table.center {
     margin: 1em;
     color: white;
     background-color: #70bfff;
+}
+
+.letter-flex {
+    display: contents;
+}
+
+@media (max-width: 400px) {
+    .container button {
+        margin: 0.5em auto;
+    }
+
+    .mainTable {
+        margin: 0em;
+    }
+
+    td {
+        display: block;
+        padding: 1em;
+    }
+
+    .display-content {
+        padding: 0em 0.81em;
+    }
+
+    #q, #w, #e, #r, #t, #y, #u, #i, #o, #p, 
+    #a, #s, #d, #f, #g, #h, #j, #k, #l,
+    #z, #x, #c, #v, #b, #n, #m {
+        padding: 0.7em;
+        font-size: 0.81em;
+    }
+
+    #answer {
+        font-size: 40px;
+    }
+
+    .wordBank {
+        font-size: 1.5em;
+    }
+
+    #displayContent {
+        font-size: 1.2em;
+    }
+
+    #displaySecondHint p,
+    #displayThirdHint p {
+        font-size: 0.9em;
+    }
+}
+
+@media (min-width: 400px) {
+    .container button {
+        margin: 0.55em auto;
+    }
+
+    .mainTable {
+        margin: 0.2em;
+    }
+
+    td {
+        display: block;
+        padding: 1.1em;
+    }
+
+    .display-content {
+        padding: 0em 0.9em;
+    }
+
+    #q, #w, #e, #r, #t, #y, #u, #i, #o, #p, 
+    #a, #s, #d, #f, #g, #h, #j, #k, #l,
+    #z, #x, #c, #v, #b, #n, #m {
+        padding: 0.77em;
+        font-size: 0.9em;
+    }
+
+    #answer {
+        font-size: 45px;
+    }
+
+    .wordBank {
+        font-size: 1.6em;
+    }
+
+    #displayContent {
+        font-size: 1.3em;
+    }
+
+    #displaySecondHint p,
+    #displayThirdHint p {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 576px) {
+    .mainTable {
+        display: grid;
+        margin-bottom: 1.4em;
+    }
+
+    .letter-flex {
+        display: flex;
+        margin: auto;
+    }
+
+    #q, #w, #e, #r, #t, #y, #u, #i, #o, #p, #a, #s, #d, #f, #g, #h, #j, #k, #l, #z, #x, #c, #v, #b, #n, #m {
+        margin: 0.8em;
+    }
+}
+
+@media (min-width: 768px) {
+    .container button {
+        margin: 0.6em auto;
+    }
+
+    .mainTable {
+        margin: 0.3em;
+    }
+
+    td {
+        display: block;
+        padding: 1.2em;
+    }
+
+    .display-content {
+        padding: 0em 1em;
+    }
+
+    #q, #w, #e, #r, #t, #y, #u, #i, #o, #p, 
+    #a, #s, #d, #f, #g, #h, #j, #k, #l,
+    #z, #x, #c, #v, #b, #n, #m {
+        padding: 1em;
+        font-size: 1em;
+        margin: 1em;
+    }
+
+    #answer {
+        font-size: 60px;
+    }
+
+    .wordBank {
+        font-size: 1.7em;
+    }
+
+    #displayContent {
+        font-size: 1.4em;
+    }
+
+    #displaySecondHint p,
+    #displayThirdHint p {
+        font-size: 1.2em;
+    }
 }
