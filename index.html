@@ -18,9 +18,9 @@
             <div class="container center">
                 <button onclick="reset()" class="btn btn-success play-button" id="play">Play</button>
 
-                <button class="btn btn-warning" onclick="toggleFirstHint()" id="firstHintId">Hint 1</button>
-                <button class="btn btn-warning" onclick="toggleSecondHint()" id="secondHintId">Hint 2</button>
-                <button class="btn btn-warning" onclick="toggleThirdHint()" id="thirdHintId">Hint 3</button>
+                <button id="firstHint" class="btn btn-warning" onclick="toggleFirstHint()" id="firstHintId">Hint 1</button>
+                <button id="secondHint" class="btn btn-warning" onclick="toggleSecondHint()" id="secondHintId">Hint 2</button>
+                <button id="thirdHint" class="btn btn-warning" onclick="toggleThirdHint()" id="thirdHintId">Hint 3</button>
             </div>
             <div class="float-right">
                 <h4>Time: <span id="gameScore"></span></h4>
@@ -52,7 +52,7 @@
         <!-- end display hints -->
         
         <!-- display feedback to user -->
-        <div>
+        <div class="display-content">
             <p id="displayContent"> </p>
             <p id="lives"> </p>
         </div>
@@ -61,7 +61,7 @@
         <!-- keyboard -->
         <div class="mainTable table-responsive" id="buttons">
             <table class="center">
-                <tr>
+                <div class="letter-flex">
                     <button onclick="handleClick('q')" id="q">Q</button>
                     <button onclick="handleClick('w')" id="w">W</button>
                     <button onclick="handleClick('e')" id="e">E</button>
@@ -72,10 +72,8 @@
                     <button onclick="handleClick('i')" id="i">I</button>
                     <button onclick="handleClick('o')" id="o">O</button>
                     <button onclick="handleClick('p')" id="p">P</button>
-                </tr>
-            </table>
-            <table class="center">
-                <tr>
+                </div>
+                <div class="letter-flex">
                     <button onclick="handleClick('a')" id="a">A</button>
                     <button onclick="handleClick('s')" id="s">S</button>
                     <button onclick="handleClick('d')" id="d">D</button>
@@ -85,10 +83,8 @@
                     <button onclick="handleClick('j')" id="j">J</button>
                     <button onclick="handleClick('k')" id="k">K</button>
                     <button onclick="handleClick('l')" id="l">L</button>
-                </tr>
-            </table>
-            <table class="center">
-                <tr>
+                </div>
+                <div class="letter-flex">
                     <button onclick="handleClick('z')" id="z">Z</button>
                     <button onclick="handleClick('x')" id="x">X</button>
                     <button onclick="handleClick('c')" id="c">C</button>
@@ -96,10 +92,9 @@
                     <button onclick="handleClick('b')" id="b">B</button>
                     <button onclick="handleClick('n')" id="n">N</button>
                     <button onclick="handleClick('m')" id="m">M</button>
-                </tr>
+                </div>
             </table>
         </div>
         <!-- end keyboard -->
-        
     </body>
 </html>
